@@ -1,0 +1,80 @@
+<!doctype html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width,initial-scale=1,viewport-fit=cover">
+<meta name="theme-color" content="#080608">
+<title>Sukuna TV — Watch Live</title>
+<link rel="stylesheet" href="style.css">
+</head>
+<body>
+<header class="topbar">
+  <a class="brand" href="#home" aria-label="Sukuna TV home">
+    <span class="brand-mark">▶</span>
+    <span class="brand-copy"><strong>Sukuna <em>TV</em></strong><small>Watch Live Channels · Anytime, Anywhere</small></span>
+  </a>
+  <div class="top-actions">
+    <button class="round-btn" id="searchToggle" aria-label="Search">⌕</button>
+    <button class="avatar" aria-label="Profile">呪</button>
+  </div>
+</header>
+
+<main id="home">
+  <section class="hero">
+    <div class="hero-art" aria-hidden="true">
+      <div class="red-mist"></div><div class="energy energy-one"></div><div class="energy energy-two"></div>
+      <div class="anime-figure"><div class="hair"></div><div class="face"><i class="mark mark-a"></i><i class="mark mark-b"></i><i class="eye"></i><i class="smile"></i></div><div class="coat"></div></div>
+    </div>
+    <div class="hero-shade"></div>
+    <div class="hero-copy">
+      <span class="live-pill">◉ &nbsp; LIVE TV ONLY</span>
+      <h1>Sukuna <b>TV</b></h1>
+      <h2>Your Ultimate <span>Live TV</span> Hub</h2>
+      <p>“Sit Back &amp; Enjoy<br>Live Channels”</p>
+      <button class="primary-btn" id="exploreBtn">Explore Live <span>▶</span></button>
+    </div>
+  </section>
+
+  <section class="category-strip" aria-label="Channel categories">
+    <button class="category active" data-filter="all"><span>◉</span>All<br>Channels</button>
+    <button class="category" data-filter="sports"><span>⚽</span>Sports</button>
+    <button class="category" data-filter="news"><span>▤</span>News</button>
+    <button class="category" data-filter="movies"><span>🎬</span>Movies</button>
+    <button class="category" data-filter="entertainment"><span>▣</span>Entertain-<br>ment</button>
+    <button class="category" data-filter="kids"><span>🧒</span>Kids</button>
+    <button class="category" data-filter="music"><span>♫</span>Music</button>
+  </section>
+
+  <section class="channel-section" id="live">
+    <div class="section-heading"><h2><i>◉</i> Live Channels</h2><button id="viewAll">View All <b>→</b></button></div>
+    <div class="channel-grid" id="channelGrid">
+      <div class="loading-card">Finding live channels…</div>
+    </div>
+    <p class="empty-state" id="emptyState" hidden>No channels found in this category.</p>
+  </section>
+</main>
+
+<nav class="bottom-nav" aria-label="Main navigation">
+  <button class="nav-item selected" data-tab="home"><span>◆</span>Home</button>
+  <button class="nav-item" data-tab="live"><span>▣</span>Live TV</button>
+  <button class="nav-item" data-tab="favorites"><span>★</span>Favorites</button>
+  <button class="nav-item" data-tab="profile"><span>●</span>Profile</button>
+  <button class="nav-item" data-tab="settings"><span>⚙</span>Settings</button>
+</nav>
+
+<div class="search-panel" id="searchPanel">
+  <div class="search-inner"><input id="searchInput" type="search" placeholder="Search live channels…"><button id="closeSearch">✕</button></div>
+</div>
+
+<div class="player" id="player" aria-hidden="true">
+  <div class="player-box">
+    <div class="player-top"><span class="on-air">● LIVE</span><strong id="playerName">Channel</strong><button id="closePlayer" aria-label="Close player">✕</button></div>
+    <video id="video" controls playsinline></video>
+    <div class="player-caption">SUKUNA TV <span>LIVE BROADCAST</span></div>
+    <p class="player-error" id="playerError"></p>
+  </div>
+</div>
+<script src="https://cdn.jsdelivr.net/npm/hls.js@1.5.13/dist/hls.min.js"></script>
+<script src="app.js"></script>
+</body>
+</html>
